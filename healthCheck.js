@@ -1,4 +1,3 @@
-const myCache = require('./cache');
 const axios = require('axios');;
 const checkHealth = async (client) => {
     setInterval( async () => {
@@ -9,7 +8,6 @@ const checkHealth = async (client) => {
                 try {
                     await axios.get(url);
                     console.log('healthCheck passed :>> ', url);
-
                 } catch (error) {
                     console.log('healthCheck failed :>> ', url);
 
@@ -18,7 +16,7 @@ const checkHealth = async (client) => {
                 }
             });
         }
-    }, 30000);
+    }, 5000);
 }
 
 module.exports = checkHealth

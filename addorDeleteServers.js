@@ -4,7 +4,7 @@ const  { createClient } =   require('redis');
 const client = createClient();
 client.connect();
 const main = async () =>{
-    try { 
+    try {   
         if(action == 'delete'){
             const keyData = JSON.parse(await client.get('servers'));
             if(keyData && keyData.indexOf(serverName) != -1){
